@@ -1,0 +1,14 @@
+{
+  "name": "ChatPal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm install --prefix backend && pnpm install --prefix frontend && pnpm build --filter frontend",
+    "dev": "concurrently \"pnpm dev --prefix backend\" \"pnpm dev --prefix frontend\"",
+    "start": "pnpm start --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
