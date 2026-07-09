@@ -6,9 +6,16 @@
   "scripts": {
     "build": "pnpm install --prefix backend && pnpm install --prefix frontend && pnpm build --filter frontend",
     "dev": "concurrently \"pnpm dev --prefix backend\" \"pnpm dev --prefix frontend\"",
-    "start": "pnpm start --prefix backend"
+    "start": "pnpm start --prefix backend",
+    "format": "prettier . --write"
   },
   "keywords": [],
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.9.4"
+  }
 }
