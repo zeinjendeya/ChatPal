@@ -23,6 +23,11 @@ export const signupValidation = [
     .withMessage("Password must be at least 6 characters long"),
 ];
 
+export const loginValidation = [
+  body("email").trim().notEmpty().withMessage("Email is required"),
+  body("password").notEmpty().withMessage("Password is required"),
+];
+
 export const validate = (req, res, next) => {
   const errors = validationResult(req);
 
