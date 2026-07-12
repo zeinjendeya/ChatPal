@@ -76,6 +76,10 @@ export const sendMessage = async (req, res) => {
       imageUrl = uploadResponse.secure_url;
     }
 
+    if (senderId.toString() === receiver.toString()) {
+      return res.status(400).json({ message: "Cannot send message to yourself" });
+    }
+
     const newMessage = new Message({
       senderId: sender,
       receiverId: receiver,
