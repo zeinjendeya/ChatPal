@@ -11,8 +11,11 @@ import {
   validate,
 } from "../validators/auth.validator.js";
 import { protectRoute } from "../middlewares/auth.middleware.js";
+import { arcjetProtection } from "../middlewares/arcjet.middleware.js";
 
 const router = express.Router();
+
+router.use(arcjetProtection);
 
 router.post("/signup", signupValidation, validate, signup);
 router.post("/login", loginValidation, validate, login);
