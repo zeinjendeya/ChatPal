@@ -95,7 +95,7 @@ export const updateProfile = async (req, res) => {
         profilePicture: uploadResult.secure_url,
       },
       { new: true },
-    );
+    ).select("-password");
 
     res.status(200).json(updatedUser);
   } catch (error) {
